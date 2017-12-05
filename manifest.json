@@ -1,0 +1,24 @@
+{
+    "manifest_version": 2,
+    "name": "Autedly",
+    "version": "0.2.0.0",
+    "description": "Auto like when you open wantedly page.",
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": true
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://www.wantedly.com/companies/altplus/*"
+            ],
+            "css": ["jquery.toast.min.css"],
+            "js": ["jquery-2.1.4.min.js", "jquery.toast.min.js", "content.js" ],
+            "run_at": "document_start"
+        }
+    ],
+    "web_accessible_resources": [
+        "background.js"
+    ],
+    "permissions": ["*://*/*"]
+}
